@@ -6,7 +6,7 @@
 - php composer.phar install
 - php artisan serve
 
-## Tecnlogias ultilizadas
+## Tecnlogias utilizadas
 
 - php 7.3
 - laravel 8.x
