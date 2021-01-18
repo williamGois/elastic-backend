@@ -1,0 +1,60 @@
+body  {
+    background: #191c24 !important;
+}
+
+.title-test {
+    margin-bottom: 2%;
+}
+
+.but-calc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2% !important;
+}
+
+.numberResult {
+    margin-top: 23%;
+    font-size: 60px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+
+table.listEvent {
+	width: 100%;
+	border-collapse: collapse;
+	/*margin-bottom: 15px;*/
+}
+
+table.listEvent tr td {
+	padding: 9px 0 9px 12px;
+    font-size:1.1em;
+    color:#FFFFFF;
+    border-top: 1px dotted #cccccc;
+}
+
+table.listEvent tr td span {
+	color:#FFFFFF;
+}
+
+table.listEvent tr th {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+table.listEvent tr td.bullet {
+	background: url("../img/bullet.png");
+	background-repeat: no-repeat;
+	background-position: 0px 8px;
+}
+
+#result{
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.top{
+    width: 20% !important;
+}
