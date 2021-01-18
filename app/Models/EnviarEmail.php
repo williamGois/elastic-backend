@@ -89,13 +89,12 @@ class EnviarEmail extends Model
             $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
             //Recipients
-            $mail->setFrom('elastic.backend@gmail.com', 'william');
-            $mail->addAddress('elastic.backend@gmail.com', 'william');
+            $mail->setFrom('joao.macedo@elastic.fit', 'william');
+            $mail->addAddress('joao.macedo@elastic.fit', 'william');
             // $mail->FromName = ;
 
             // // Attachments
             $mail->addAttachment('temp/rastreio_encomenda.pdf');         // Add attachments
-            // $mail->addAttachment('/image.jpg', 'new.jpg');    // Optional name
 
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
