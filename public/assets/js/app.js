@@ -6,8 +6,8 @@ $('#number').on("keyup", function (e) {
 
 $('#calcule').on("click", function (e) {
 
-    $('#calcule').css("display","none");
-    $('#calcule2').css("display","block");
+    $('#calcule').css("display", "none");
+    $('#calcule2').css("display", "block");
 
     if ($('#number').val() == '') {
         Swal.fire({
@@ -22,14 +22,19 @@ $('#calcule').on("click", function (e) {
             url: "rastrear/" + $('#number').val() + "",
             dataType: 'json',
             success: function (data) {
-                $('#calcule').css("display","block");
-                $('#calcule2').css("display","none");
+                $('#calcule').css("display", "block");
+                $('#calcule2').css("display", "none");
                 console.log(data);
 
                 $("#result").empty();
 
                 if (data.eventos.length == 0) {
-
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Codigo de rastreio invalido!',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
                 } else {
 
                     for (var i = 0; i < data.eventos.length; i++) {
@@ -57,7 +62,7 @@ $('#calcule').on("click", function (e) {
 
                         }
 
-                        if(data.eventos[i].status == undefined){
+                        if (data.eventos[i].status == undefined) {
                             data.eventos[i].status = '';
                         }
                         $html = '<table class="listEvent sro"><tbody><tr><td class="sroDtEvent top" valign="top">' + data.eventos[i].data + '<br>' + data.eventos[i].hora + '<br><label style="text-transform:capitalize;">' + data.eventos[i].local + '</label></td><td class="sroLbEvent"><strong>' + data.eventos[i].status + '</strong><br>' + loc + '  ' + destino + '</td></tr></tbody> </table>';
@@ -66,6 +71,19 @@ $('#calcule').on("click", function (e) {
                 }
 
             },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Codigo de rastreio invalido!',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+                $('#calcule').css("display", "block");
+                $('#calcule2').css("display", "none");
+                console.log(data);
+
+                $("#result").empty();
+            }
         });
     }
 });
