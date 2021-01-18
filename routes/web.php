@@ -22,3 +22,5 @@ Route::get('/', function () {
 
 
 Route::get('rastrear/{codigo}', [ApiCorreiosController::class, 'rastrear']);
+
+
